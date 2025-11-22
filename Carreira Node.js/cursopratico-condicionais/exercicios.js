@@ -27,3 +27,20 @@ if (salario >= 11000) {
 } else {
     console.log('9% de bônus')
 }
+
+
+
+
+
+
+// deve ser divisível por 4 mas NÃO divisível por 100
+// OU
+// deve ser divisível por 100 e por 400
+
+const ano = 2024
+
+if (((ano % 4 === 0) && (ano % 100 !== 0)) || (ano % 400 === 0)) {
+    console.log(ano, 'ano bicesto')
+} else {
+    console.log('não é bicesto', ano)
+}
