@@ -44,3 +44,33 @@ if (((ano % 4 === 0) && (ano % 100 !== 0)) || (ano % 400 === 0)) {
 } else {
     console.log('não é bicesto', ano)
 }
+
+
+
+// condicional ternario e switch
+
+const nome = "Vitor"
+const nota = 8
+const faltas = 3
+
+const recebeuBonus = (nota >= 8) && (faltas <= 2) 
+ ? `${nome} recebeu bônus`
+ : `${nome} não recebeu bônus`
+
+
+
+const user = 'premium'
+
+switch(user) {
+    case 'free':
+        console.log('acesso limitado')
+        break
+    case 'premium':
+        console.log('acesso total ao app')
+        break
+    case 'super user':
+        console.log('acesso total + bônus')
+    default:
+    console.log('tipo de user desconhecido')
+    break
+}
