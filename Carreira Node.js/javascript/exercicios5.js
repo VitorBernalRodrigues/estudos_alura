@@ -55,9 +55,3 @@ if(somaNotas >= 7) {
     console.log('reprovado')
 }
 
-// 6
-
-
-let pessoas = {
-    
-}
