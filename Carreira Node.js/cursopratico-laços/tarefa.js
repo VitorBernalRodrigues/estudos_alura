@@ -120,3 +120,20 @@ for (let i = 1; i < tempoMinimo; i++) {
     }
     console.log(`aquecendo... segundo ${i}`)
 }
+
+
+// Você recebeu a tarefa de automatizar o painel de uma linha de empacotamento em um centro de distribuição. A cada ciclo, uma nova caixa é processada. A linha só pode processar no máximo 5 caixas válidas por vez. Mas, algumas caixas com número de identificação negativo precisam ser ignoradas, pois estão danificadas.
+
+// Crie um programa que simule o processamento das caixas, exibindo as válidas e ignorando as danificadas. O programa deve parar o processamento assim que 5 caixas válidas forem processadas.
+
+const caixas = [12, -1, 8, 0, -5, 3, 7, 14];
+
+const caixasValidas = caixas.filter(n => n >= 0)
+
+for (let i = 0; i <= caixasValidas.length; i++) {
+    if (i >= 5) {
+        console.log('Limite de caixas processadas atingido!')
+        break
+    }
+    console.log(`Caixa processada: ${caixasValidas[i]}`)
+}
