@@ -29,3 +29,52 @@ for (let i = 1; i <= 50; i++) {
 }
 
 console.log(contador)
+
+
+
+// while
+
+// Gerar um laço que tente "adivinhar" um dado número de 1 a 50
+// e conte a quantidade de tentativas até o resultado
+
+let numeroSecreto = 10
+let numeroNormal = 0
+let tentativas = 0
+
+while (numeroSecreto !== numeroNormal) {
+    numeroNormal = Math.floor(Math.random() * (50 - 1 + 1) + 1);
+    tentativas++
+}
+
+console.log(tentativas)
+
+
+//do while
+
+// Gerar um laço que tente "adivinhar" um dado número de 1 a 50
+// e conte a quantidade de tentativas até o resultado
+
+let numeroRandom = 0;
+
+do {
+    numeroRandom = Math.floor(Math.random() * (50 - 1 + 1) + 1);
+    console.log(numeroRandom)
+} while (numeroRandom % 2 !== 0);
+
+console.lof(numeroRandom)
+
+// criar um laço que recebe um texto e verifica se é um palíndromo
+// imprimir no console o texto, informando se é ou não palíndromo
+
+let palavra = 'manga'
+let palavraInvertida = ''
+
+for (let i = palavra.length - 1; i <= 0; i--) {
+    palavraInvertida += palavra[i]
+}
+
+if(palavraInvertida === palavra) {
+    console.log(`${palavra} é palíndromo`)
+} else {
+    console.log(`${palavra} não é palíndromo`);
+}
