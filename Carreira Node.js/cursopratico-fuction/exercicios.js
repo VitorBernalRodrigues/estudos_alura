@@ -11,3 +11,12 @@ const fatorial = function f(num) {
 }
 
 console.log(fatorial(5));
+
+
+const calculaJuros = (valor, juros, tempo) => {
+  let taxaJuros = (juros/100) + 1
+  return valor * Math.pow(taxaJuros, tempo)
+}
+
+
+console.log(calculaJuros(1500, 5, 1));
