@@ -44,3 +44,44 @@ const calcularMedia = (a, b) => {return console.log((a + b) / 2)}
 
 
 calcularMedia(7, 9);
+
+
+// Imagine que você está desenvolvendo uma funcionalidade para um sistema de quiz matemático. Cada vez que o jogador digita um número, o sistema precisa informar se ele é par ou ímpar — mas a lógica precisa estar encapsulada em uma arrow function.
+
+// Sua missão é criar uma arrow function chamada verificarParidade que receba um número como parâmetro e retorne a string:
+
+// "Par" se o número for par
+// "Ímpar" se for ímpar
+
+let verificarParidade = (numero) => {
+    if(numero % 2 === 0) {
+        return console.log('par');
+    } else {
+        return console.log('impar');
+    }
+}
+
+verificarParidade(8);
+
+
+// Imagine que você está construindo o módulo de entrega de um aplicativo de entregas locais. Para cada pedido, o sistema precisa calcular o valor do frete com base na distância até o endereço do cliente. A regra é a seguinte:
+
+// Até 5 km: frete fixo de R$ 5
+// De 5.1 km até 20 km: R$ 0,50 por quilômetro
+// Acima de 20 km: frete fixo de R$ 20
+// Seu desafio é escolher o tipo de função mais adequado para resolver este problema. Função tradicional? Arrow Function? E aí? Como vai implementar esse desafio?
+
+
+function calcularFrete(distancia) {
+    let frete = 0
+    if(distancia <= 5) {
+        frete = 5
+        return console.log(distancia * frete)
+    } else if( distancia > 5 && distancia <= 20) {
+        frete = 0.50
+        return console.log(distancia * frete)
+    }  else {
+        frete = 20
+        return console.log(distancia * frete)
+    }
+}
