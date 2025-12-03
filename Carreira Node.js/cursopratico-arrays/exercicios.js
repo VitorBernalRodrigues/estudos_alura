@@ -96,7 +96,22 @@ const livros = ['Dom Casmurro', 'O Cortiço', 'Capitães da Areia', 'Iracema']
 const livroProcurado = 'O Cortiço'
 
 if (livros.indexOf(livroProcurado) !== -1) {
-  console.log(`O livro "${livroProcurado}" está disponível.`);
+  console.log(`O livro "${livroProcurado}" está disponível.`)
 } else {
-  console.log(`O livro "${livroProcurado}" não foi encontrado.`);
+  console.log(`O livro "${livroProcurado}" não foi encontrado.`)
 }
+
+// Você está desenvolvendo um sistema de pagamento e todos os produtos precisam receber um desconto de 10% antes de serem exibidos para as pessoas. Escreva um programa que:
+
+// Crie um array com os preços originais dos produtos.
+// Use o método map() para aplicar 10% de desconto em cada item.
+// Exiba o novo array com os preços já com o desconto aplicado.
+
+
+const precos = [100, 80, 50, 120]
+
+const precosDescontos = precos.map(preco => preco * 0.9)
+
+console.log("Preços com desconto:", precosDescontos)
+console.log(precosDescontos)
+
