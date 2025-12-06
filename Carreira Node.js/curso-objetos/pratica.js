@@ -37,3 +37,28 @@ user.calcularIdade = function calcularIdade() {
     const idade = new Date().getFullYear() - nascimento
     return console.log(idade)
 }
+
+// 3
+
+// acesse um array de objetos e imprima no terminal os nomes e status de ativação de cada pessoa.
+
+const clientes = [
+    {
+        nome: 'Marina M',
+        ativo: true,
+    },
+    {
+        nome: 'Rafael R',
+        ativo: false,
+    },
+    {
+        nome: 'Fabio F',
+        ativo: false,
+    },
+];
+
+for (const cliente of clientes) {
+    const status = clientes.ativo ? 'ativo' : 'inativo'
+    console.log(`status cliente ${cliente.nome}: ${status}`)
+    
+}
