@@ -1,4 +1,5 @@
 const fs = require("fs");
+const trataErros = require('./erros/funcoesErros')
 
 const caminhoArquivo = process.argv;
 const link = caminhoArquivo[2];
@@ -9,26 +10,35 @@ if (!link) {
 }
 
 fs.readFile(link, "utf-8", (err, texto) => {
-    if (err) {
-        console.error("Erro ao ler o arquivo:", err.message);
-        return;
+    try {
+        if (err) throw err
+        contaPalavras(texto);
+    } catch (err) {
+        trataErros(err)
     }
-    quebraEmParagrafos(texto);
+    // if (err) {
+    //     console.error("Erro ao ler o arquivo:", err.message);
+    //     return;
+    // }
 });
 
-function quebraEmParagrafos(texto) {
-    const paragrafos = texto.toLowerCase().split('\n');
-    const contagem = paragrafos.flatMap((paragrafo) => {
+function contaPalavras(texto) {
+        const paragrafos = extrairParagrafos(texto)
+        const contagem = paragrafos.flatMap((paragrafo) => {
         if (!paragrafo) return [];
         return verificaPalavrasDuplicadas(paragrafo);
     })
-    console.log(contagem);
+    console.log(contagem);    
 }
 
+function extrairParagrafos(texto) {
+    return texto = texto.toLowerCase().split('\n');
+}
 
 function limpaPalavra(texto) {
     return texto.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "");
 }
+
 function verificaPalavrasDuplicadas(texto) {
     const listaPalavras = texto.split(" ");
     const resultado = {};
