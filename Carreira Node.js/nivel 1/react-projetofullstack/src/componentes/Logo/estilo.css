@@ -1,0 +1,9 @@
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+}
+
+.App-logo {
+    margin-right: 10px;
+}
