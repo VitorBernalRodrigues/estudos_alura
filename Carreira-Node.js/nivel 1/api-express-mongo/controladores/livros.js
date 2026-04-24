@@ -1,5 +1,5 @@
 const fs = require("fs")
-const { getTodosLivros, getLivroPorId, insereLivro, modificaLivro} = require("../servicos/livro.js")
+const { getTodosLivros, getLivroPorId, insereLivro, modificaLivro, deletaLivro} = require("../servicos/livro.js")
 
 function getLivros(req, res) {
     try {
@@ -42,6 +42,17 @@ function patchLivro(req, res) {
 
         modificaLivro(body, id)
         res.send("item modificado com sucesso!")
+    } catch (error) {
+        res.status(500)
+        res.send(error.message)
+    }
+}
+
+function deletaLivro(req, res) {
+    try {
+        const id = req.params.id
+        deletarLivroPorId(id)
+        res.send("livro deletado com sucesso")
     } catch (error) {
         res.status(500)
         res.send(error.message)
