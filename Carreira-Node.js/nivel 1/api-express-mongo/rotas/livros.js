@@ -1,16 +1,9 @@
 const { Router } = require("express")
+const { getLivros } = require("../controladores/livros.js")
 
 const router = Router()
 
-router.get("/", (req, res) => {
-    try {
-        // throw new Error("teste")
-        res.send("Olá Mundo")
-    } catch (error) {
-        res.status(500)
-        res.send(error.mensage)
-    }
-})
+router.get("/", getLivros)
 
 router.post("/", (req, res) => {
     res.send("Requisição do tipo POST")
