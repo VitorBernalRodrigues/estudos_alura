@@ -82,5 +82,6 @@ module.exports = {
     getLivros,
     getLivro,
     postLivro,
-    patchLivro
+    patchLivro,
+    deletaLivro
 }
