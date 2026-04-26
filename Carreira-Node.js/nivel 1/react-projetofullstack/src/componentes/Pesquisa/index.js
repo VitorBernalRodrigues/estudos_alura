@@ -31,8 +31,13 @@ function Pesquisa() {
     const [livros, setLivros] = useState([]);
 
     useEffect(() => {
-        const livrosAPI = getLivros
-     }, []);
+        const fetchLivros = async () => {
+            const livrosDaAPI = await getLivros();
+            setLivros(livrosDaAPI);
+        };
+
+        fetchLivros();
+    }, []);
 
     console.log(livrosDigitados);
 
