@@ -1,5 +1,5 @@
-import Header from "./componentes/header";
-import Pesquesa from "./componentes/Pesquisa";
+import Header from "../componentes/header";
+import Pesquesa from "../componentes/Pesquisa";
 import styled from "styled-components";
 
 const AppContainer = styled.div`
@@ -8,13 +8,12 @@ const AppContainer = styled.div`
     background-image: linear-gradient(90deg, #002F52 35%, #326589 100%);
 `;
 
-function App() {
+function Home() {
     return (
         <AppContainer>
-            <Header />
             <Pesquesa />
         </AppContainer>
     );
 }
 
-export default App;
+export default Home;

@@ -3,6 +3,7 @@ import Logo from "../Logo";
 import Icones from "../Icones";
 import opcoesHeader from "../OpcoesHeader";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const HeaderContainer = styled.header`
     display: flex;
@@ -14,6 +15,7 @@ const HeaderContainer = styled.header`
 function Header() {
     return (
         <HeaderContainer >
+            <Link to={"/"}><Logo /></Link>
             <Logo />
             {opcoesHeader()}
             <Icones />
