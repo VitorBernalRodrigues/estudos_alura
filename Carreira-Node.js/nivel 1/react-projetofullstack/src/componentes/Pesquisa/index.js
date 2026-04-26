@@ -1,7 +1,8 @@
 import Input from '../input';
 import styled from 'styled-components';
-import { useState } from 'react';
-import { livros } from './dadosPesquisa';
+import { useEffect, useState } from 'react';
+import { getLivros } from '../../servicos/livros';
+//  
 
 const PesquisaContainer = styled.section`
         background-image: linear-gradient(90deg, #002F52 35%, #326589 165%);
@@ -27,7 +28,12 @@ const Subtitulo = styled.h3`
 
 function Pesquisa() {
     const [livrosDigitados, setLivrosDigitados] = useState([]);
-    
+    const [livros, setLivros] = useState([]);
+
+    useEffect(() => {
+        const livrosAPI = getLivros
+     }, []);
+
     console.log(livrosDigitados);
 
     return (
@@ -43,8 +49,13 @@ function Pesquisa() {
                     );
                     setLivrosDigitados(resultadoPesquisa);
                 }}
-            
             />  
+            {livrosDigitados.map(livro => (
+                <ResultadoPesquisa> 
+                    <img src={livro.src} />,
+                    <p>{livro.nome}</p>
+                </ResultadoPesquisa>
+            ))}
         </PesquisaContainer>
     );
 }
