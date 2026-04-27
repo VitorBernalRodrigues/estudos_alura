@@ -1,6 +1,6 @@
-import Header from "../componentes/header";
-import Pesquesa from "../componentes/Pesquisa";
 import styled from "styled-components";
+import { useEffect, useState } from "react";
+import { getFavoritos } from "../servicos/favoritos";
 
 const AppContainer = styled.div`
     width: 100vw;
@@ -9,9 +9,22 @@ const AppContainer = styled.div`
 `;
 
 function Favoritos() {
+    const [favoritos, setFavoritos] = useState([]);
+
+    async function fetchFavoritos() {
+        const favoritosDaAPI = await getFavoritos();
+        setFavoritos(favoritosDaAPI);
+    }
+
+    useEffect(() => {
+        fetchFavoritos();
+    }, []);
+
     return (
         <AppContainer>
-            <Pesquesa />
+            {favoritos.map(favorito => (
+                <p>{favorito.nome}</p>
+            ))}
         </AppContainer>
     );
 }
