@@ -2,6 +2,7 @@ import Input from '../input';
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
 import { getLivros } from '../../servicos/livros';
+import { postFavorito } from '../../servicos/favorito';
 //  
 
 const PesquisaContainer = styled.section`
@@ -39,6 +40,11 @@ function Pesquisa() {
         fetchLivros();
     }, []);
 
+    async function insertFavoritos() {
+        await postFavorito(id)
+        alert('Livro adicionado aos favoritos!')
+    }
+
     console.log(livrosDigitados);
 
     return (
@@ -56,7 +62,7 @@ function Pesquisa() {
                 }}
             />  
             {livrosDigitados.map(livro => (
-                <ResultadoPesquisa> 
+                <ResultadoPesquisa onClick={() => insertFavoritos(livro.id)}> 
                     <img src={livro.src} />,
                     <p>{livro.nome}</p>
                 </ResultadoPesquisa>
