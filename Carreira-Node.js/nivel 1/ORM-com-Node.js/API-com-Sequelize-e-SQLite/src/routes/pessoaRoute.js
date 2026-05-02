@@ -3,7 +3,8 @@ const PessoaController = require('../controllers/pessoaController');
 
 const router = Router();
 
-router.get('/pessoas', PessoaController.pegaTodasAsPessoas);
-router.post('/pessoas', PessoaController.createPessoa);
+const pessoaController = new PessoaController();
+
+router.get('/pessoas', (req, res) => pessoaController.pegaTodasAsPessoas(req, res));
 
 module.exports = router;
