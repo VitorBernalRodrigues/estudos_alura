@@ -10,4 +10,3 @@ class PessoaController extends Controller {
 }
 
 module.exports = new PessoaController();
-        
