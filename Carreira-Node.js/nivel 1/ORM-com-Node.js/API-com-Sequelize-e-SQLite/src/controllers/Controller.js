@@ -1,3 +1,5 @@
+const convertIds = require('../utils/conversorDeStringHelper.js');
+
 class Controller {
     constructor(service) {
         this.service = service;
@@ -24,8 +26,9 @@ class Controller {
 
     async pegaUm(req, res) {
         const { ...params } = req.params;
+        const paramsConvertidos = convertIds(params);
         try {
-            const registro = await this.service.pegaUmRegistro(params);
+            const registro = await this.service.pegaUmRegistro(paramsConvertidos);
             return res.status(200).json(registro);
         } catch (error) {
             res.status(500).json({ error: 'Erro ao pegar pessoa' });
