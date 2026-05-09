@@ -35,7 +35,7 @@ class MatriculaController extends Controller {
                 },
                 attributes: ['curso_id'],
                 group: ['curso_id'],
-                having: Sequelize.literal(`COUNT(curso_id) >= ${lotacaoCurso}`)
+                having: Sequelize.literal(`COUNT(curso_id) >= ${lotacaoCurso} `)
             });
 
         } catch (error) {
