@@ -10,4 +10,8 @@ class PessoaServices extends Services {
         const listaMatriculas = await estudante.getAulasMatriculadas();
         return listaMatriculas;
     }
+
+    async pegaPessoasEscopoTodos() {
+        return super.pegaTodosOsRegistrosPorEscopo('todosOsRegistros');
+    }
 }
