@@ -18,6 +18,16 @@ class MatriculaController extends Controller {
             res.status(500).json({ error: 'Erro ao pegar matrículas do estudante' });
         }
     }
+
+    async pegaCursosLotados(req, res) {
+        const lotacaoCurso = 2;
+        try {
+            const cursosLotados = await matriculaServices.pegaEContaRegistros({ status: 'confirmada' });
+            
+        } catch (error) {
+            res.status(500).json({ error: 'Erro ao pegar cursos lotados' });
+        }
+    }
 }
 
 module.exports = new MatriculaController();
