@@ -11,7 +11,7 @@ class PessoaController extends Controller {
     async pegaMatriculaAtivas(req, res) {
         const { estudanteId } = req.params;
         try {
-            const listaMatriculas = await pessoaServices.pegaMatriculasAtivasPorEstudante(Number(estudanteId));
+            const listaMatriculas = await pessoaServices.pegaMatriculasAtivasPorEstudante(Number(estudante_id));
             return res.status(200).json(listaMatriculas);
         } catch (error) {
             return res.status(500).json(error.message);

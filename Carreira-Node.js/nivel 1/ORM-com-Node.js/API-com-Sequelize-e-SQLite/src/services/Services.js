@@ -25,8 +25,8 @@ class Services {
         return database[this.model].create(dadosDoRegistro);
     }
 
-    async atualizaRegistro(dadosAtualizados, id) {
-       const ListaDeRegistrosAtualizados = await database[this.model].update(dadosAtualizados, { where: { id: (id) } });
+    async atualizaRegistro(dadosAtualizados, where) {
+       const ListaDeRegistrosAtualizados = await database[this.model].update(dadosAtualizados, { where: { ...where } });
         if (ListaDeRegistrosAtualizados[0] === 0) {
             return false
         }
