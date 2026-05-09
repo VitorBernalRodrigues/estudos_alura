@@ -16,6 +16,10 @@ class Services {
     async pegaUmRegistroPorId(id) {
         return database[this.model].findByPk((id));
     }
+    
+    async pegaUmRegistro(where) {
+        return database[this.model].findOne({ where: { ... where } });
+    }
 
     async criaRegistro(dadosDoRegistro) {
         return database[this.model].create(dadosDoRegistro);

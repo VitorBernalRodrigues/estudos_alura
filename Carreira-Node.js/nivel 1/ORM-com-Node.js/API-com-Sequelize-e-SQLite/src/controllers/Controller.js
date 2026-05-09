@@ -22,6 +22,16 @@ class Controller {
         }
     }
 
+    async pegaUm(req, res) {
+        const { ...params } = req.params;
+        try {
+            const registro = await this.service.pegaUmRegistro(params);
+            return res.status(200).json(registro);
+        } catch (error) {
+            res.status(500).json({ error: 'Erro ao pegar pessoa' });
+        }
+    }
+
     async criaNovo(req, res) {
         const novoRegistro = req.body;
         try {
