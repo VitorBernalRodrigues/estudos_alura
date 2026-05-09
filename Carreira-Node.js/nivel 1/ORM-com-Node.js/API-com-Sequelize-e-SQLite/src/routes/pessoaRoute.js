@@ -1,9 +1,9 @@
 const { Router } = require('express');
 const PessoaController = require('../controllers/pessoaController');
-const MatriculaController = require('../controllers/matriculaController');
+const MatriculaController = require('../controllers/matriculaController'); 
 
 const router = Router();
-const matriculaController = new MatriculaController();
+const matriculaController = new MatriculaController()
 
 
 const pessoaController = new PessoaController();
@@ -16,6 +16,7 @@ router.put('/pessoas/:id', (req, res) => pessoaController.atualizaRegistro(req, 
 router.delete('/pessoas/:id', (req, res) => pessoaController.excluiRegistro(req, res));
 router.get('/pessoas/:estudante_id/matriculas', (req, res) => pessoaController.pegaMatriculaAtiva(req, res));
 router.get('/pessoas/:estudante_id/matriculas/todas', (req, res) => pessoaController.pegaTodasAsMatriculas(req, res));
+router.get('/pessoas/:estudante_id/matriculas/confirmadas', (req, res) => matriculaController.pegaMatriculaPorEstudante(req, res));
 router.get('/pessoas/:estudante_id/matriculas/:id', (req, res) => matriculaController.pegaUm(req, res));
 router.post('/pessoas/:estudante_id/matriculas', (req, res) => matriculaController.criaNovo(req, res));
 router.put('/pessoas/:estudante_id/matriculas/:id', (req, res) => matriculaController.atualizaRegistro(req, res));
