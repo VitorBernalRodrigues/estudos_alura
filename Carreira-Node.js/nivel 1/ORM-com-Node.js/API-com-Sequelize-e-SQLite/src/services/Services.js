@@ -21,10 +21,8 @@ class Services {
         return database[this.model].findOne({ where: { ... where } });
     }
 
-    async pegaEContaRegistros(where) {
-        return database[this.model].findAndCountAll({ where: { ...where },
-        limit: 2,
-        order: [['id', 'ASC']] });
+    async pegaEContaRegistros(options) {
+        return database[this.model].findAndCountAll({ ...options });
     }
 
     async criaRegistro(dadosDoRegistro) {
