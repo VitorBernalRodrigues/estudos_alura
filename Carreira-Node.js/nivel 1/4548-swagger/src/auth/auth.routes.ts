@@ -1,8 +1,11 @@
 import express, { Request, Response } from "express";
 import { authService } from "./auth.service";
 import { userService } from "../user/user.service";
+import swaggerJSDoc from "swagger-jsdoc";
 
 const authRouter = express.Router();
+
+
 
 authRouter.post("/register", async (req: Request, res: Response) => {
   const user = req.body;
